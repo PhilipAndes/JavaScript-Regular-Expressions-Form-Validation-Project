@@ -19,13 +19,19 @@ function validateName() {
         // else we want it removed:
         name.classList.remove('is-invalid');
     }
-
 }
 
 function validateZip() {
     // Get the value of the zipcode field
     const zip = document.getElementById('zip');
-    
+    // Here we are using the Dutch zipcode, which is always 4 numbers and then 2 uppercase letters, so for example:  4000XP
+    const re = /^[0-9]{4}[A-Z]{2}$/; 
+
+    if(!re.test(zip.value)) {
+        zip.classList.add('is-invalid');
+    } else {
+        zip.classList.remove('is-invalid');
+    }
 }
 
 function validateEmail() {
