@@ -54,16 +54,16 @@ function validateEmail() {
 function validatePhone() {
     // Get the value of the phone field
     const phone = document.getElementById('phone');
-    // We want to accept a lot of different formats, like: 06 123 456 78/ (06)123 456 78/ 06.123.456.78/ 0612345678 
+    // We want to accept different formats, like: 06 1234 5678/ (06)1234 5678/ 06.1234 5678/ 0612345678 
     // So lets start with the paretheses (), we want literal paretheses, so begin with backslash, then the paretheses, and a ? mark because we want it to be optional!
     // We want it to be a digit, so again, backslash en then d: \d
-    // We want it to be max 4 digits and minimal 2 (for Dutch phone numbers) 
+    // We want it to be minimal 2 (for mobile phone numbers) 
     // Then another backslash for the  literal paretheses to close it ()
     // Then the ? mark because it should be optional!
     // We want it to be possible to seperate it with a dash, dot or space
     // so after the ? mark the brackets with a dash, a dot and a space
     // which is a optional as wel, so again a space
-    // Then another set of 3 digits
+    // Then another set of 4 digits
     // Notice that I have changed the message in the UI but not with all acceptable formats
     const re = /^\(?\d{2}\)?[-. ]?\d{4}[-. ]?\d{4}$/; 
 
